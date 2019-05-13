@@ -9,6 +9,7 @@ th { font-size: 90% }
 #myphoto { display: block; margin: 0 auto; width: 20%;}
 
 p.citazione { text-align: center; font-style: italic }
+p.citazione::after{content: "©"}
 p:first-letter {font-size: 200%; color: yellow; font-weight: bold;}
 
 a:link { color: darkorange; text-decoration: none}
