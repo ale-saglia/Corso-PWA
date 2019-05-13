@@ -1,9 +1,7 @@
-body { background: url(img/background.png) repeat ; background-color: black; font-family: Helvetica, Arial, Sans-Serif; font-size: 100%; line-height: 110%; color: white;  background-blend-mode:lighten}
-a {color: lightblue}
+body { background: url(img/background.png) repeat; background-color: black; font-family: Helvetica, Arial, Sans-Serif; font-size: 100%; line-height: 110%; color: white; counter-reset: mycounter;}
 
 td.votobasso { color: red; text-align: center }
 td.votoalto { color: green; text-align: center }
-td.votononpervenuto { text-align: center }
 
 caption { text-align: left }
 th { font-size: 90% }
@@ -11,5 +9,15 @@ th { font-size: 90% }
 #myphoto { display: block; margin: 0 auto; width: 20%;}
 
 p.citazione { text-align: center; font-style: italic }
+p:first-letter {font-size: 200%; color: yellow; font-weight: bold;}
+
+a:link { color: darkorange; text-decoration: none}
+a:visited { color: darkorange; text-decoration: none}
+a:hover { color: white; background: darkorange; text-decoration: none}
+a:active { color: white; background: red; text-decoration: none }
+
+h2::before {
+  counter-increment: mycounter;
+  content: " " counter(mycounter) ". "; }
 
 #myfooter { font-family: "Times New Roman", Georgia, Serif; font-style: italic; font-size: 80%; }
