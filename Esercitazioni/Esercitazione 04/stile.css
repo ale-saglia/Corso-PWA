@@ -1,0 +1,13 @@
+/* esempio di CSS lab4 esercizio 4.1 */
+
+body { background-color: black; font-family: Helvetica, Arial, Sans-Serif; font-size: 100%; line-height: 110%; color: white; }
+
+a {color: lightblue}
+
+td.votobasso { color: red; text-align: center }
+td.votoalto { color: green; text-align: center }
+
+caption { text-align: left }
+th { font-size: 0.9em }
+
+#myfooter { font-family: "Times New Roman", Georgia, Serif; font-style: italic; font-size: 80%; }
