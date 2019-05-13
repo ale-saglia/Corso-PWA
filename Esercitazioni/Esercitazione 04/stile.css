@@ -1,11 +1,9 @@
-/* esempio di CSS lab4 esercizio 4.2 */
-
-body { background-color: black; font-family: Helvetica, Arial, Sans-Serif; font-size: 100%; line-height: 110%; color: white}
-
+body { background: url(img/background.png) repeat ; background-color: black; font-family: Helvetica, Arial, Sans-Serif; font-size: 100%; line-height: 110%; color: white;  background-blend-mode:lighten}
 a {color: lightblue}
 
 td.votobasso { color: red; text-align: center }
 td.votoalto { color: green; text-align: center }
+td.votononpervenuto { text-align: center }
 
 caption { text-align: left }
 th { font-size: 90% }
