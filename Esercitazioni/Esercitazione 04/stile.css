@@ -1,6 +1,6 @@
-/* esempio di CSS lab4 esercizio 4.1 */
+/* esempio di CSS lab4 esercizio 4.2 */
 
-body { background-color: black; font-family: Helvetica, Arial, Sans-Serif; font-size: 100%; line-height: 110%; color: white; }
+body { background-color: black; font-family: Helvetica, Arial, Sans-Serif; font-size: 100%; line-height: 110%; color: white}
 
 a {color: lightblue}
 
@@ -8,6 +8,10 @@ td.votobasso { color: red; text-align: center }
 td.votoalto { color: green; text-align: center }
 
 caption { text-align: left }
-th { font-size: 0.9em }
+th { font-size: 90% }
+
+#myphoto { display: block; margin: 0 auto; width: 20%;}
+
+p.citazione { text-align: center; font-style: italic }
 
 #myfooter { font-family: "Times New Roman", Georgia, Serif; font-style: italic; font-size: 80%; }
