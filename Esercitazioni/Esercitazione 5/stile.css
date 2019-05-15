@@ -1,0 +1,59 @@
+body { background: url(img/background.png) repeat; background-color: black; font-family: Helvetica, Arial, Sans-Serif; font-size: 100%; line-height: 110%; color: white; counter-reset: mycounter;}
+
+td.votobasso { color: red; text-align: center }
+td.votoalto { color: green; text-align: center }
+
+caption { text-align: left }
+th { font-size: 90% }
+
+#myphoto { display: block; margin: 0 auto; width: 20%;}
+
+p.citazione { text-align: center; font-style: italic }
+p.citazione::after{content: "©"}
+p:first-letter {font-size: 200%; color: yellow; font-weight: bold;}
+
+a:link { color: darkorange; text-decoration: none}
+a:visited { color: darkorange; text-decoration: none}
+a:hover { color: white; background: darkorange; text-decoration: none}
+a:active { color: white; background: red; text-decoration: none }
+
+h2::before {
+  counter-increment: mycounter;
+  content: " " counter(mycounter) ". ";
+}
+
+table{border-style:solid; border-color:gray; border-width:0.1em; padding:0.1em; margin:0.1em;} /*non rilevante, solo estetica */
+
+#myheader{
+  border: 0.1em solid red;
+  padding: 0.1em; text-align:center;
+  min-width: 30em;
+}
+
+#navigation{
+  float: left;
+  padding:3%;
+  width: 10em;
+}
+
+#content{
+  padding: 3%;
+  margin-left: 11em;
+  min-width: 30em;
+  padding-bottom: 8em;
+}
+
+#myfooter { font-family: "Times New Roman", Georgia, Serif; font-style: italic; font-size: 0.8em; 
+  /*parte aggiuntiva per esercizio 5.1*/
+  width: 99%; /*non 100% per evitare che la renderizzazione di immagini possa uscire dai limiti*/
+  height:8em;
+  border-top: 0.3em solid blue;
+  padding-top: 0.3em;   /*per evitare bordo e contenuto del footer si sovrappongano*/
+  margin-bottom:1em;     /* per lasciare un po' di spazio dal bordo della finestra */
+  min-width: 30em;
+  
+  float:none;
+  clear:both;
+  /*position: absolute;  
+  bottom:0;*/       /*altra possibilita in alternativa a clear both e float:none per il footer: ha il vantaggio di posizionarlo sempre a fondo finestra, ma per finestre piccole verrebbe sovrapposto ad altri elementi, rendendo il risultato illeggibile*/
+  } 
