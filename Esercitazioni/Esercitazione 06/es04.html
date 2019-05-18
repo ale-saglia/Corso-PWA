@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+        <link rel="stylesheet" href="style.css">
+        <script>
+            function somma (a,b){
+                var somma = a + b;
+                return somma;
+            }
+
+            function differenza(a,b){
+                var differenza = a - b;
+                return differenza;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Esercizio 6.4</h1>
+        <script>
+            var isValid = false;
+
+            do{
+                var a = window.prompt("Inserisci il primo numero", "");
+                var b = window.prompt("Inserisci il secondo numero", "");
+
+                if ((a == "") || (b == "")){
+                    window.alert("Attenzione, dei valori validi!");
+                }
+                else{
+                    var anum = parseFloat(a);
+                    var bnum = parseFloat(b);
+
+                    if(isNaN(anum) || isNaN(bnum) || anum != a || bnum != b)
+                        window.alert("Attenzione, dei valori validi!");
+                    else{
+                        isValid = true;
+                        var somma = somma(anum, bnum);
+                        var differenza = differenza(anum, bnum);
+
+                        document.writeln("<li>Il primo numero inserito &egrave; "+anum+".<\/li>");
+                        document.writeln("<li>Il secondo numero inserito &egrave; "+bnum+".<\/li>");
+                        document.writeln("<li>La somma dei due numeri &egrave; "+somma+".<\/li>");
+                        document.writeln("<li>La differenza dei due numeri &egrave; "+differenza+".<\/li>");
+                    }
+                }
+            } while (!isValid)
+        </script>
+    </body>
+</html>
