@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+        <link rel="stylesheet" href="style.css">
+        <script>
+            function somma (a,b){
+                var somma = a + b;
+                return somma;
+            }
+
+            function differenza(a,b){
+                var differenza = a - b;
+                return differenza;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Esercizio 6.3</h1>
+
+        <script>
+            var isValid = false;
+
+            do{
+                var a = window.prompt("Inserisci il primo numero", "");
+                var b = window.prompt("Inserisci il secondo numero", "");
+
+                if ((a == "") || (b == ""))
+                    window.alert("Inserisci entrami i valori!");
+                else{
+                    var anum = parseFloat(a);
+                    var bnum = parseFloat(b);
+
+                    if(isNaN(anum) || isNaN(bnum) || anum != a || bnum!= b){
+                        window.alert("Attenzione, i valori devono essere numerici!");
+                    }
+                    else{
+                        isValid = true;
+                        
+                        window.alert("La somma dei due numeri è " + somma(anum, bnum));
+                        window.alert("La differenza dei due numeri è " + differenza(anum, bnum));
+                    }
+                }
+            } while (!isValid)
+        </script>
+    </body>
+</html>
