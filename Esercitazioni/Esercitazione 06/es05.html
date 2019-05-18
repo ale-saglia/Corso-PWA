@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+        <link rel="stylesheet" href="style.css">
+
+        <script>
+            function quadrato(num){
+                var quadrato = num * num;
+                return quadrato;
+            }
+
+            function cubo(num){
+                var cubo = num * quadrato(num);
+                return cubo;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Esercizio 6.5</h1>
+        <script>
+            var isValid = false;
+             do{
+                var n = window.prompt("Inserisci un numero", "");
+
+                if(n == "")
+                    window.alert("Attenzione, valore del numero non valido");
+                else{
+                    var pn = parseInt(n);
+
+                    if(isNaN(pn) || pn != n)
+                        window.alert("Attenzione, valore del numero non valido");
+                    else{
+                        isValid = true;
+
+                        document.writeln("<table>");
+                        document.writeln("<tr><th>N<sup><\/sup><\/th><th>N<sup>2<\/sup><\/th><th>N<sup>3<\/sup><\/th><\/tr>");
+
+                        for(var i = 1; i <= n; i++){
+                            document.write("<tr>");
+                            document.write("<td>" + i + "<\/td>");
+                            document.write("<td>" + quadrato(i) + "<\/td>");
+                            document.write("<td>" + cubo(i) + "<\/td>");
+                            document.writeln("<\/tr>");
+                        }
+
+                        document.writeln("<\/table>");
+                    }
+                }
+             } while (!isValid);
+        </script>
+    </body>
+</html>
