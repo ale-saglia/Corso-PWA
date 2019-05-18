@@ -10,6 +10,10 @@
             function modulo(np){
                 return (np % 2);
             }
+
+            function intero(np){
+                return (np % 1);
+            }
         </script>
     </head>
 
@@ -17,19 +21,33 @@
         <h1>Esercizio 6.2</h1>
 
         <script>
-            var n = window.prompt("Inserisci il numero da controllare", "");
-            var np = parseInt(n);
+            var input, num;
+            var invalid = true;
+            
+            do{
+                input = window.prompt("Inserisci il numero da controllare", "");
+                num = Number(input);
 
-            document.writeln("<p>Il valore introdotto &egrave; "+np+".<\/p>");
+                if(!input)
+                    window.alert("Non hai inserito un numero!");
+                else if (isNaN(num))
+                    window.alert("Non hai inserito un numero valido!");
+                else if (intero(num) != 0)
+                    window.alert("Non hai inserito un numero intero!")
+                else{
+                    document.writeln("<p>Il valore introdotto &egrave; "+input+".<\/p>");
 
-            var modulo = modulo(np);
+                    var modulo = modulo(num);
 
-            if(modulo == 0){
-                document.writeln("<p>Il numero inserito &egrave; pari.<\/p>");
-            }
-            else{
-                document.writeln("<p>Il numero inserito &egrave; dispari.<\/p>");
-            }
+                    if(modulo == 0){
+                        document.writeln("<p>Il numero inserito &egrave; pari.<\/p>");
+                    }
+                    else{
+                        document.writeln("<p>Il numero inserito &egrave; dispari.<\/p>");
+                    }
+                    invalid = false;    
+                }
+            } while(invalid);           
         </script>
     </body>
 </html>
