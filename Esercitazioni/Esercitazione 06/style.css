@@ -1,0 +1,26 @@
+body{
+    background-color: darkblue;
+    color: lightcyan;
+    font-family: "Helvetica";
+}
+
+h1{
+    font-weight: bold;
+}
+
+a{
+    color: lightcyan;
+    font-style: italic;
+}
+
+table, th, td{
+    border: 1px solid lightgray;
+}
+
+.data{
+    color: greenyellow;
+}
+
+.data{
+    color: cyan;
+}

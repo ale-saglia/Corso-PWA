@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Esercizio 6.2</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+        <link rel="stylesheet" href="style.css">
+
+        <script>
+            function modulo(np){
+                return (np % 2);
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Esercizio 6.2</h1>
+
+        <script>
+            var n = window.prompt("Inserisci il numero da controllare", "");
+            var np = parseInt(n);
+
+            document.writeln("<p>Il valore introdotto &egrave; "+np+".<\/p>");
+
+            var modulo = modulo(np);
+
+            if(modulo == 0){
+                document.writeln("<p>Il numero inserito &egrave; pari.<\/p>");
+            }
+            else{
+                document.writeln("<p>Il numero inserito &egrave; dispari.<\/p>");
+            }
+        </script>
+    </body>
+</html>
