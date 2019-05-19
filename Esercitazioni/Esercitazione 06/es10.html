@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Esercizio 6.10</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+        <link rel="stylesheet" href="style.css">
+
+        <script>      
+            function data(d) {
+                return "Ora e data con fuso orario di default: " + d.getDate() + "/" + (d.getMonth()+1) + "/" + d.getFullYear() + " - " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+            }
+
+            function data_UTC(d) {
+                return "Ora e data con fuso orario UTC: " + d.getUTCDate() + "/" + (d.getUTCMonth()+1) + "/" + d.getUTCFullYear() + " - " + d.getUTCHours() + ":" + d.getUTCMinutes() + ":" + d.getUTCSeconds();
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Esercizio 6.10</h1>
+        <script>
+            var d = new Date();
+            document.writeln("<p>L'ora locale &egrave; " + data(d) +"</p>");
+            document.writeln("<p>L'ora UTC &egrave; " + data_UTC(d) +"</p>");
+        </script>
+    </body>
+</html>
