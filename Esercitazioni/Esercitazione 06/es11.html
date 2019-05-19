@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Esercizio 6.11</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+        <link rel="stylesheet" href="style.css">
+
+        <script>
+            function circonferenza(diametro){
+                var pi = Math.PI;
+                return (diametro*pi).toFixed(3);
+            }
+
+            function area(diametro){
+                var pi = Math.PI;
+                return ((diametro/2)*(diametro/2)*pi).toFixed(3);
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <h1>Esercizio 6.11</h1>
+        <script>
+            var isValid = false;
+            do{
+                var input = window.prompt("Inserisci il diametro della circonferenza", "");
+                if(input == "")
+                    window.alert("Errore: il diametro non può essere NULL");
+                else{
+                    var inputNum = parseFloat(input);
+                    if(isNaN(inputNum) || inputNum != input){
+                        window.alert("Errore: il diametro non può essere NULL");
+                    }
+                    else{
+                        isValid = true;
+                        document.writeln("<p>Un cerchio di diametro "+ inputNum +" ha area "+ area(inputNum) +" e circonferenza "+ circonferenza(inputNum) +".</p>");
+                    }
+                }
+            } while (!isValid);
+        </script>
+    </body>
+</html>
