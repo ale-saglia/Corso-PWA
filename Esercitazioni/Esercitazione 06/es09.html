@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Esercizio 6.9</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>Esercizio 6.9</h1>
+        <script>
+            function allerta(){
+                window.alert("Salve, sono qui ai tuoi ordini!");
+            }
+
+            var nome = window.prompt("Inserisci il tuo nome","");
+            nome = nome.toUpperCase();
+            document.writeln("<p>Benvenuto <a onclick=\"allerta()\">"+ nome +"</a> nel mio umile sito!</p>");
+        </script>
+    </body>
+</html>
