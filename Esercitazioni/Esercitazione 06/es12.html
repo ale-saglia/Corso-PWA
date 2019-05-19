@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Esercizio 6.12</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+
+        <script>
+            function cambia(periodo) {
+               switch (periodo) { 
+                    case 'giorno':
+                       document.getElementById('titolo').innerHTML = "Esercizio 6.12 - adesso &egrave; giorno";
+                       document.body.style.background = "#ffff99";
+                       document.body.style.color = "#002266";
+                   break;
+                   case 'notte':
+                       document.getElementById('titolo').innerHTML = "Esercizio 6.12 - adesso &egrave; notte";
+                       document.body.style.background = "#443344";
+                       document.body.style.color = "#ddeeff";
+                   break;
+                   default:
+                       document.getElementById('titolo').innerHTML = "Esercizio 6.12 - adesso &egrave; notte";
+                       document.body.style.background = "#443344";
+                       document.body.style.color = "#ddeeff";
+               }
+            }
+       </script>
+    </head>
+
+    <body>
+        <h1 id="titolo">Esercizio 6.12 - adesso &egrave; giorno</h1>
+        <p>Tanto va la gatta al lardo che ci lascia lo zampino</p>
+        <p><span onClick="cambia('giorno')">GIORNO</span></p>
+        <p><span onClick="cambia('notte')">NOTTE</span></p>
+    </body>
+</html>
