@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>Esercizio 6.6</h1>
+        <script>
+            var isValid = false;
+             do{
+                var n = window.prompt("Inserisci un numero", "");
+
+                if(n == "")
+                    window.alert("Attenzione, valore del numero non valido");
+                else{
+                    var pn = parseInt(n);
+
+                    if(isNaN(pn) || pn != n)
+                        window.alert("Attenzione, valore del numero non valido");
+                    else{
+                        isValid = true;
+
+                        document.writeln("<table>");
+
+                        document.write("<tr>");
+                        for(var i = 1; i <= n; i++){
+                            document.write("<th>" + i + "<\/th>");
+                        }
+                        document.writeln("<\/tr>");
+
+                        for(var i = 2; i <= n; i++){
+                            document.write("<tr>");
+                            for(var j = 1; j <= n; j++){
+                            document.write("<td>" +  i*j + "<\/td>");
+                            }
+                            document.writeln("<\/tr>");
+                        }
+                        document.writeln("<\/table>");
+                    }
+                }
+             } while (!isValid);
+        </script>   
+    </body>
+</html>
