@@ -7,13 +7,13 @@
         <link rel="stylesheet" href="style.css">
 
         <script>
-            function calcSomma(somma, n){
-                somma += n;
-                return somma;
-            }
+            function media(valori){
+                var n = valori.length;
+                var somma = 0;
 
-            function media(somma, n){
-                return(somma/n);
+                for(var i = 0; i < n; i++)
+                    somma += valori[i];
+                return somma/n;
             }
         </script>
     </head>
@@ -25,7 +25,6 @@
         <script>
             var n = 0;
             var numeri = [];
-            var somma;
             var input = window.prompt("Inserire un numero oppure \"fine\" per terminare", "");
 
             while (input != "fine"){
@@ -36,8 +35,6 @@
                     if (isNaN(inputNum) || inputNum != input)
                         window.alert("Errore: non hai inserito un valore numerico");
                     else{
-                        somma = calcSomma(somma, inputNum);
-                        n++;
                         numeri.push(inputNum);
                     }
                 }
@@ -45,16 +42,9 @@
             }
         document.writeln("<\/p>");
 
-        if (n>0){
-            document.writeln("<p>I numeri introdotti sono: ");
-            
-            for(i=0; i < numeri.length; i++){
-                document.write(numeri[i]);
-                if(numeri.length > i++)
-                    document.write(",");
-            }
-            document.writeln("</p>");
-            document.writeln("<p>La media dei valori introdotti &egrave;:"+media(somma, n) + "<\/p>");     
+        if (numeri.length>0){
+            document.writeln("<p>I numeri introdotti sono: "+ numeri +"</p>");
+            document.writeln("<p>La media dei valori introdotti &egrave;: "+ media(numeri) +"<\/p>");     
         }
         else
             document.writeln("<p>Nessun valore valido introdotto, media non calcolabile<\/p>");
