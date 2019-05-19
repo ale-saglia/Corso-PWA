@@ -4,5 +4,61 @@
         <title>Esercizio 6.7</title>
         <meta charset="utf-8">
         <meta name="author" content="Alessandro Saglia">
+        <link rel="stylesheet" href="style.css">
+
+        <script>
+            function calcSomma(somma, n){
+                somma += n;
+                return somma;
+            }
+
+            function media(somma, n){
+                return(somma/n);
+            }
+        </script>
     </head>
+
+    <body>
+        <h1>Esercizio 6.7</h1>
+        <p>Valori introdotti: </p>
+
+        <script>
+            var n = 0;
+            var numeri = [];
+            var somma;
+            var input = window.prompt("Inserire un numero oppure \"fine\" per terminare", "");
+
+            while (input != "fine"){
+                if (input == "")
+                    window.alert("Errore: non hai inserito alcun valore");
+                else{
+                    var inputNum = parseFloat(input);
+                    if (isNaN(inputNum) || inputNum != input)
+                        window.alert("Errore: non hai inserito un valore numerico");
+                    else{
+                        somma = calcSomma(somma, inputNum);
+                        n++;
+                        numeri.push(inputNum);
+                    }
+                }
+                var input = window.prompt("Inserire un numero oppure \"fine\" per terminare", "");
+            }
+        document.writeln("<\/p>");
+
+        if (n>0){
+            document.writeln("<p>I numeri introdotti sono: ");
+            
+            for(i=0; i < numeri.length; i++){
+                document.write(numeri[i]);
+                if(numeri.length > i++)
+                    document.write(",");
+            }
+            document.writeln("</p>");
+            document.writeln("<p>La media dei valori introdotti &egrave;:"+media(somma, n) + "<\/p>");     
+        }
+        else
+            document.writeln("<p>Nessun valore valido introdotto, media non calcolabile<\/p>");
+        </script>
+
+    </body>
 </html>
