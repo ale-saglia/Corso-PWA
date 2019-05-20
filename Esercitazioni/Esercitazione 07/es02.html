@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Eserctiazione 7.2</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+        <script>
+            function changeColour(color){
+                document.body.style.backgroundColor = color;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Esercitazione 7.2</h1>
+        
+        <p>Inserisci il colore della pagina: </p>
+        <form name="form1" action="#">
+            <label><input type="radio" name="color" value="red" onclick="changeColour('red');">Rosso</label>
+            <label><input type="radio" name="color" value="green" onclick="changeColour('green');">Verde</label>
+            <label><input type="radio" name="color" value="yellow" onclick="changeColour('yellow');">Giallo</label>
+            <label><input type="radio" name="color" value="white" onclick="changeColour('white');" checked>Bianco</label>    
+        </form>
+    </body>
+</html>
