@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Eserctiazione 7.2</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+        <script>
+            function changeColour(){
+                var color = document.getElementById("palette").value;
+                document.body.style.backgroundColor = color;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Esercitazione 7.2</h1>
+        
+        <p>Inserisci il colore della pagina: </p>
+        <form name="form1" action="#">
+            <input type="color" id="palette">
+            <input type="button" value="Cambia colore" onclick="changeColour()">
+        </form>
+    </body>
+</html>
