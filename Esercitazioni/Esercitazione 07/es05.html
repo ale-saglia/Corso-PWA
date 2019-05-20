@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Eserctiazione 7.4</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+        <script>
+            function calcola(){
+                var n1 = document.getElementById("n1").value;
+                var n2 = document.getElementById("n2").value;
+
+                if(n1 == "" || n2 == ""){
+                    document.getElementById("result").value = "";
+                }
+                    
+                else{
+                    var n1Num = parseInt(n1);
+                    var n2Num = parseInt(n2);
+
+                    if(!isNaturalNumber(n1, n1Num) || !isNaturalNumber(n2, n2Num)){
+                        document.getElementById("result").value = "";
+                    }
+                        
+                    else
+                        document.getElementById("result").value = n1Num+n2Num;  
+                }
+            }
+            function isNaturalNumber(n, nNum){
+                if(isNaN(nNum) || (nNum != n) || (nNum < 0))
+                    return false;
+                else
+                    return true;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Esercitazione 7.4</h1>
+        <form name="form1" action="#">
+            <p>Inserisci il primo numero naturale: <input type="text" id="n1" onchange="calcola()"></p>
+            <p>Inserisci il secondo numero naturale: <input type="text" id="n2" onchange="calcola()"></p>
+            <p>La somma dei due numeri &egrave;: <input type="text" id="result" readonly></p>
+        </form>
+    </body>
+</html>
