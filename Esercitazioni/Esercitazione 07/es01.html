@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Esercitazione 7.1</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+
+        <script>
+            function minuscolo(){
+                var string = document.form1.nome.value;
+                if (string == "")
+                    window.alert("Errore: inserita una stringa vuota!");
+                else
+                    window.alert(string.toLowerCase());
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Esercitazione 7.1</h1>
+        <form name="form1" action="#">
+            <p>Inserisci la tua stringa: <input type="text" name="nome" value="">
+            <input type="button" value="Invio" onclick="minuscolo()"></p>
+
+        </form>
+    </body>
+
+</html>
