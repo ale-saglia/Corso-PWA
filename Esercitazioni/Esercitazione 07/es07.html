@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Eserctiazione 7.6</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Alessandro Saglia">
+        <script src="funzioni.js"></script>
+    </head>
+
+    <body>
+        <h1>Esercizio 7.7</h1>
+        <p>Calcolo del massimo valore</p>
+        <form name="f1" action="#">
+    <!-- e' possibile generare le righe del form con un ciclo for, utile soprattutto in caso di grandi numeri di righe, e magari per permettere un numero di input variabili a seconda dell'elaborazione. In questo caso, essendo fissato il numero ed essendo relativamente pochi, questa soluzione e' accettabile-->
+          <p>Numero 1: <input type="text" name="num1"></p>
+          <p>Numero 2: <input type="text" name="num2"></p>
+          <p>Numero 3: <input type="text" name="num3"></p>
+          <p>Numero 4: <input type="text" name="num4"></p>
+          <p>Numero 5: <input type="text" name="num5"></p>
+          <p><input type="button" name="max" value="Trova il massimo"
+                              onclick="Maggiore(document.f1.num1.value,
+                                                document.f1.num2.value,
+                                                document.f1.num3.value,
+                                                document.f1.num4.value,
+                                                document.f1.num5.value)">
+          <input type="reset" name="canc" value="Cancella"></p>
+        </form>
+      </body>
+</html>
