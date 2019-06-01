@@ -1,0 +1,104 @@
+<!doctype html>
+<!--NOTA: questa soluzione considera due tipi di input per la stessa quantita', allo scopo di semplificare la vita all'utente. Anche uno solo dei due, in accordo con le specifiche dell'esercizio, sarebbe sufficiente. Volendone usare due pero', e' necessario mantenere coerenza tra i due controlli di input, che sarebbero indipendenti di per se (e quindi incoerenti). Allo scopo serve la funzione copyValue che "propaga" il valore di un controllo all'altro quando il valore di uno dei due viene cambiato   -->
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Esercizio 7.8</title>
+    <meta name="author" content="Alessandro Saglia" >
+    <script>
+      "use strict";
+      function totale(flp,cd,dvd, t_sd,t_usb,t_dvd, t) {
+        var costosd=15.50, costousb=18.00, costodvd=2.00;
+        var tot_sd=0, tot_usb=0, tot_dvd=0;
+        var tot=0;   
+          
+        tot_sd += costosd * parseFloat(flp);
+        tot_usb += costousb * parseFloat(cd);
+        tot_dvd += costodvd * parseFloat(dvd);
+        t_sd.value = tot_sd; 
+        t_usb.value = tot_usb;
+        t_dvd.value = tot_dvd;
+        t.value = tot_sd+tot_usb+tot_dvd; 
+      }
+    
+      function copyValue(field_A, field_B) 
+      {
+        field_B.value = field_A.value;
+      }
+     </script>
+   </head>
+   <body>
+     <h1>Esercizio 7.8</h1>
+       <form name="f1" action="#">
+         <p>
+            Memoria SD 8GB:
+            <input name="sdR" type ="range" min ="0" max="10" step ="1" value ="0" onchange=copyValue(sdR,sdS) hidden/>
+             <select name="sdS" onchange=copyValue(sdS,sdR)>
+                    <option value="0" selected>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+            </select> 
+        </p> 
+        <p> 
+          Chiavetta USB 8GB:
+          <input name="usbR" type ="range" min ="0" max="10" step ="1" value ="0" onchange=copyValue(usbR,usbS) hidden/>
+          <select name="usbS" onchange=copyValue(usbS,usbR)>
+                    <option value="0" selected>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+            </select>
+          </p> 
+          <p> 
+            DVD-R:
+            <input name="dvdrR" type ="range" min ="0" max="10" step ="1" value ="0" onchange=copyValue(dvdrR,dvdrS) hidden/>
+            <select name="dvdrS" onchange=copyValue(dvdrS,dvdrR)>
+                    <option value="0" selected>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+             </select>
+          </p> 
+          <p> 
+             <input type="button" value="Calcola" onClick="totale(sdR.value,usbR.value,dvdrR.value, tot_sd, tot_usb, tot_dvd, tot);">
+          </p>
+          <p>
+            Costo totale SD: <output id="tot_sd"></output>
+          </p>
+          <p>
+            Costo totale USB: <output id="tot_usb"></output>
+          </p>
+          <p>
+            Costo totale DVD: <output id="tot_dvd"></output>
+          </p>
+          <p>
+            Costo complessivo: <output id="tot"></output>
+          </p>
+          <p>
+            <input type="reset" name="canc" value="Azzera">
+          </p>
+        </form>
+    </body>
+</html>
