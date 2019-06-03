@@ -2,23 +2,32 @@
 <html lang="it">
   <head>
     <meta charset="utf-8" />
-    <title>Esercizio 7.8</title>
+    <title>Esercizio 7.9</title>
     <meta name="author" content="Alessandro Saglia" >
     <script>
       "use strict";
-      function totale(flp,cd,dvd, t_sd,t_usb,t_dvd, t) {
+      function totale(sd,usb,dvd,t_sd,t_usb,t_dvd, t, tm_inizio, tm_fine) {
         var costosd=15.50, costousb=18.00, costodvd=2.00;
         var tot_sd=0, tot_usb=0, tot_dvd=0;
-        var tot=0;   
-          
-        tot_sd += costosd * parseFloat(flp);
-        tot_usb += costousb * parseFloat(cd);
+        var tot=0;     
+        var tm_inizio_tok= tm_inizio.split(":"); 
+        var tm_fine_tok= tm_fine.split(":");
+        var min_i=parseInt(tm_inizio_tok[0])*60+parseInt(tm_inizio_tok[1]);     
+        var min_f=parseInt(tm_fine_tok[0])*60+parseInt(tm_fine_tok[1]);          
+
+        if( min_i>min_f)  
+          window.alert("ATTENZIONE, orario di inizio intervallo successivo ad orario di fine");         
+        if( min_i>0 && min_f<300)    
+          window.alert("ATTENZIONE, non possibile effettuare la consegna della merce nella fascia oraria richiesta");
+
+        tot_sd += costosd * parseFloat(sd);
+        tot_usb += costousb * parseFloat(usb);
         tot_dvd += costodvd * parseFloat(dvd);
         t_sd.value = tot_sd; 
         t_usb.value = tot_usb;
         t_dvd.value = tot_dvd;
         t.value = tot_sd+tot_usb+tot_dvd; 
-      }
+       }
     
       function copyValue(field_A, field_B) 
       {
@@ -27,7 +36,7 @@
      </script>
    </head>
    <body>
-     <h1>Esercizio 7.8</h1>
+     <h1>Esercizio 7.9</h1>
        <form name="f1" action="#">
          <p>
             Memoria SD 8GB:
@@ -81,7 +90,11 @@
              </select>
           </p> 
           <p> 
-             <input type="button" value="Calcola" onClick="totale(sdR.value,usbR.value,dvdrR.value, tot_sd, tot_usb, tot_dvd, tot);">
+             <input type="button" value="Calcola" onClick="totale(sdR.value,usbR.value,dvdrR.value, tot_sd, tot_usb, tot_dvd, tot, inizioO.value, fineO.value);">
+          </p>
+          <p> orari di disponibilita per ricevimento della merce -  
+            inizio: <input type="time" name="inizioO" value="08:00" /> 
+            fine: <input type="time" name="fineO" value="13:00" />
           </p>
           <p>
             Costo totale SD: <output id="tot_sd"></output>
