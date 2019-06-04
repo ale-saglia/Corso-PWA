@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Esercizio 7.13</title>
+    <meta name="author" content="Alessandro Saglia">
+    <script>
+      function verifica(){
+        "use strict";
+        var username = document.getElementById("username").value;
+        var valido = true;
+        
+        if(username.lenght < 5){
+          window.alert("ERRORE: lo username inserito deve avere almeno 5 caratteri");
+          valido = false;
+        }
+
+        if(username.match(/[^a-zA-Z\.\,]/g)){
+          window.alert("ERRORE: sono presenti i seguenti caratteri non consentiti (separati da virgola)\n" + username.match(/[^a-zA-Z\.\,]/g));
+          valido = false;
+        }
+
+        if(!(/[A-Z]/).test(username)){
+          window.alert("ERRORE: è necessario che lo username contenga almeno una lettera maisucola");
+          valido = false;
+        }
+
+        if(!(/[a-z]/).test(username)){
+          window.alert("ERRORE: è necessario che lo username contenga almeno una lettera minuscola");
+          valido = false;
+        }
+
+        if(valido)
+          window.alert("Lo username è valido");
+      }
+    </script>
+  </head>
+  
+  <body>
+    <h1>Esercizio 7.13</h1>
+    <form name="calcolatrice" action="#">
+      <p>Inserisci lo username: <input type="text" id="username"></p>
+      <input type="button" value="Verifica" onclick="verifica();">
+    </form>
+  </body>
+</html>
