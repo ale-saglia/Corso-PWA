@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Esercizio 7.10</title>
+    <meta name="author" content="Alessandro Saglia" >
+    <script>
+      function inserisciTesto(testo){
+        document.getElementById("testoInserito").innerHTML=testo;
+        document.getElementById("testoInserito").style.cssText="color:red";
+      }
+
+      function cancella(){
+        document.getElementById("testoInserito").innerHTML="Nessun testo inserito";
+        document.getElementById("testoInserito").style.cssText="color:black";
+      }
+    </script>
+  </head>
+  
+  <body>
+    <h1>Esercizio 7.10</h1>
+    <form name="mioForm" onSubmit="return inserisciTesto(document.mioForm.testoDaInserire.value);" onReset="cancella();" action="#">
+      <div id="areaDiTesto">
+        <p>Inserisci qui il tuo testo: </p>
+        <textarea name="testoDaInserire" rows="4" cols="50"></textarea>
+      </div>
+      <div id="controlli">
+        <input type="submit" value="OK">
+        <input type="reset" value="Cancella">
+      </div>
+    </form>
+    <h2>Il testo inserito &egrave;</h2>
+    <p id="testoInserito" style="color: black">Nessun testo inserito</p>
+  </body>
+</html>
