@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Esercizio 7.16s</title>
+    <meta name="author" content="Alessandro Saglia">
+    <script>
+      function verifica(){
+        "use strict";
+        var dataString = document.getElementById("data").value;
+        var data;
+
+
+        if(!(/^(\d{1}|\d{2})-(\d{1}|\d{2})-(\d{4})$/)){
+          window.alert("ERRORE: Formato della data non corretto.");
+        }
+        else {
+          data = new Date(dataString.split("-")[2], dataString.split("-")[1]-1, dataString.split("-")[0]);
+          if(data.getDate() != parseInt(dataString.split("-")[0])){
+            window.alert("ERRORE: I campi della data non sono coerenti.");
+          } 
+          else{
+            document.getElementById("giorno").value = data.getDate();
+            document.getElementById("mese").value = data.getMonth()+1;
+            document.getElementById("anno").value = data.getFullYear();
+          }
+        }
+      }
+    </script>
+  </head>
+  
+  <body>
+    <h1>Esercizio 7.16</h1>
+    <form name="calendario" action="#">
+      <p>Inserisci la data: <input type="text" id="data"> <input type="button" value="Verifica" onclick="verifica();"></p>
+      <p>Giorno: <input type="text" id="giorno" readonly><br>
+      Mese: <input type="text" id="mese" readonly><br>
+      Anno: <input type="text" id="anno" readonly></p>
+    </form>
+  </body>
+</html>
