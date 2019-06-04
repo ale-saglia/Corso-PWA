@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Esercizio 7.14</title>
+    <meta name="author" content="Alessandro Saglia">
+    <script>
+      function verifica(){
+        "use strict";
+        var stringa;
+        var valido = true;
+
+        stringa = document.getElementById("nome").value;
+        if(!(/^[A-Z][a-z]{0,9}$/).test(stringa)){
+          window.alert("ERRORE: il campo nome non ha un formato valido");
+          valido = false;
+        }
+        
+        stringa = document.getElementById("eta").value;
+        if(!(/^(([0-9])|([1-9][0-9])|(1[0-9][0-9]))$/).test(stringa)){
+          window.alert("ERRORE: il campo età non ha un formato valido");
+          valido = false;
+        }
+
+        stringa = document.getElementById("cellulare").value;
+        if(!(/^0[0-9]{1,2}-[0-9]{3}-?[0-9]{3,4}$/).test(stringa)){
+          window.alert("ERRORE: il campo cellulare non ha un formato valido");
+          valido = false;
+        }
+
+        if(valido)
+          window.alert("Tutti i dati hanno un formato corretto.")
+      }
+    </script>
+  </head>
+  
+  <body>
+    <h1>Esercizio 7.14</h1>
+    <form name="anagrafiac" action="#">
+      <p>Inserisci il nome: <input type="text" id="nome"></p>
+      <p>Inserisci l'et&agrave;: <input type="text" id="eta"></p>
+      <p>Inserisci il numero di cellulare: <input type="text" id="cellulare"></p>
+      <input type="button" value="Verifica" onclick="verifica();">
+    </form>
+  </body>
+</html>
