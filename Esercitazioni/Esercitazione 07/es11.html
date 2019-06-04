@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Esercizio 7.11</title>
+    <meta name="author" content="Alessandro Saglia">
+    <script src="calcolatrice.js"></script>
+    <script>
+      function calcola(operazione){
+        var n1 = document.getElementById("n1").value;
+        var n2 = document.getElementById("n2").value;
+        var operazione = document.getElementById("operazione").value.toLowerCase();
+        var risultato;
+        
+        if (operazione == "")
+          window.alert("ERRORE: operazione non inserita");
+        else if(isNValido(n1) == false || isNValido(n2) == false)
+          window.alert("ERRORE: inserire numeri validi");
+        else{
+          switch (operazione){
+          case "somma":
+            risultato = somma(n1, n2);
+            break;
+          
+          case "differenza":
+            risultato = sottrazione(n1, n2);
+            break;
+          
+          case "prodotto":
+            risultato = prodotto(n1, n2);
+            break;
+          
+          case "divisione":
+            risultato = quoziente(n1, n2);
+            break;
+          }
+
+          document.getElementById("risultato").value = risultato.toFixed(2);
+        }
+      }
+
+      function cambiaOperazione(operazione){
+        switch (operazione){
+          case "somma":
+            document.getElementById("operazione").value = "Somma";
+            break;
+          
+          case "differenza":
+            document.getElementById("operazione").value = "Differenza";
+            break;
+          
+          case "prodotto":
+            document.getElementById("operazione").value = "Prodotto";
+            break;
+          
+          case "divisione":
+            document.getElementById("operazione").value = "Divisione";
+            break;
+        }
+      }
+
+      function resetta(){
+        document.getElementById("operazione").value = "";
+        document.getElementById("n1").value = "";
+        document.getElementById("n2").value = "";
+        document.getElementById("risultato").value = "";
+      }
+    </script>
+  </head>
+  
+  <body>
+    <h1>Esercizio 7.11</h1>
+    <form name="calcolatrice" action="#">
+      <p>Inserisci il primo numero: <input type="text" id="n1"></p>
+      <p>Inserisci il secondo numero: <input type="text" id="n2"></p>
+      <input type="button" id="somma" value="Somma" onclick="cambiaOperazione('somma');">
+      <input type="button" id="differenza" value="Differenza" onclick="cambiaOperazione('differenza');">
+      <input type="button" id="prodotto" value="Prodotto" onclick="cambiaOperazione('prodotto');">
+      <input type="button" id="divisione" value="Divisione" onclick="cambiaOperazione('divisione');">
+      <p>Operazione selezionata: <input type="text" id="operazione" readonly> <input type="button" onclick="calcola();" value="Calcola"></p>
+      <p>Il risultato dell'operazione &egrave;: <input type="text" readonly id="risultato"></p>
+      <input type="button" value="Reset" onclick="reset();">
+    </form>
+  </body>
+</html>
