@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <title>Esercizio 8.1</title>
+        <meta name="author" content="Alessandro Saglia">
+        <script>
+            function validaForm(testo){
+                if (testo != "")
+                    return true;
+                window.alert("ERRORE: la stringa inserita non può essere vuota!");
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Esercizio 8.1</h1>
+        <form name="f" method="GET" action="es01.php" onSubmit="return validaForm(testo.value)">
+            <p>Inserire il testo da inviare al server:</p>
+            <p>Testo: <input type="text" name="testo"></p>
+            <p><input type="reset"><input type="submit"></p>
+        </form>
+    </body>
+</html>
