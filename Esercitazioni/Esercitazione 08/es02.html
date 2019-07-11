@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <title>Esercizio 8.2</title>
+        <meta name="author" content="Alessandro Saglia">
+        <script>
+            function validaForm(testo){
+                if (testo != "")
+                    return true;
+                window.alert("ERRORE: la stringa inserita non può essere vuota!");
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Esercizio 8.2</h1>
+        <form name="f" method="GET" action="es02.php" onSubmit="return validaForm(testo.value)">
+            <p>Inserire gli addendi interi da far calcolare la somma al server:</p>
+            <p>Addendo 1: <input type="text" name="addendo1"></p>
+            <p>Addendo 2: <input type="text" name="addendo2"></p>
+            <p><input type="submit" value="Somma"><input type="reset" value="Cancella"></p>
+        </form>
+    </body>
+</html>
