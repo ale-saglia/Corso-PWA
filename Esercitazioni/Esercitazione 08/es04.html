@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <title>Esercizio 8.4</title>
+        <meta name="author" content="Alessandro Saglia">
+        <script>
+            function validaForm(testo){
+                if (testo != "")
+                    return true;
+                window.alert("ERRORE: la stringa inserita non può essere vuota!");
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Esercizio 8.4</h1>
+        <form name="f" method="GET" action="es04.php">
+            <p>Inserire il prezzo unitario e l'aliquota IVA per calcolare il prezzo finale: </p>
+            <p>Prezzo unitario netto: <input name = "prezzoUnitario" type="number" step=".01" min="0"></p>
+            <p>Aliquota IVA: 
+                <input type="radio" name="iva" value="minima"> Minima
+                <input type="radio" name="iva" value="ridotta"> Ridotta
+                <input type="radio" name="iva" value="ordinaria"> Ordinaria
+            </p>
+            <p><input type="submit"><input type="reset"></p>
+        </form>
+    </body>
+</html>
