@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <title>Esercizio 9.7</title>
+        <meta name="author" content="Alessandro Saglia">
+        <script type="text/javascript">
+            function validate(nome, cognome, username, password, email){
+                var regNomeCognome = /^[A-Z][\sA-Z-Za-z]{0,29}$/;
+                var regUsername = /^[A-Za-z\d\-+.]{6,20}$/;
+                var regPassword = /^(?=(.*[\d]){2})(?=.*[A-Z])(?=.*[a-z])[A-Za-z\d]{8,16}$/;
+                var regEmail = /^[A-Za-z0-9\-_]+(\.[A-Za-z0-9\-_]+)*@[A-Za-z0-9\-]+(\.[A-Za-z0-9\-]+)*(\.[a-z]{2,6})$/;
+
+                if( !regNomeCognome.test(nome)){
+                    alert("Formato nome non valido! Deve iniziare con una lettera maiuscola, contenere solo lettere o spazi e non deve superare i 30 caratteri");
+                    return false;
+                }
+                else if( !regNomeCognome.test(cognome)){
+                    alert("Formato cognome non valido!  Deve iniziare con una lettera maiuscola, contenere solo lettere o spazi e non deve superare i 30 caratteri");
+                    return false;
+                }
+                else if( !regUsername.test(username)){
+                    alert("Formato username non valido! Deve contenere minimo 6 caratteri e massimo 20 caratteri. I caratteri ammissibili sono quelli alfanumerici, il punto, il '+' ed il '-'");
+                    return false;
+                }
+                else if( !regPassword.test(password)){
+                    alert("La password inserita non rispetta gli standard di sicurezza! Deve contenere minimo 8 e massimo 16 caratteri, scelti tra quelli alfanumerici, e deve contenere almeno due cifre, una lettera maiuscola e una minuscola");
+                    return false;
+                }
+                else if( !regEmail.test(email)){
+                    alert("Formato e-mail non valido!");
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Esercizio 9.7</h1>
+        <p>Inserire informazioni utente:</p>
+        <form action="Es07.php" method="GET" onsubmit="return validate(nome.value, cognome.value, username.value, password.value, email.value);">
+            <p>
+                <label>Nome (non pi&ugrave; di 30 caratteri alfabetici e/o spazi, di cui il primo maiuscolo): <input type="text" name="nome" maxlength="30"></label>
+            </p>
+            <p>
+                <label>Cognome (non pi&ugrave; di 30 caratteri alfabetici e/o spazi, di cui il primo maiuscolo):<input type="text" name="cognome" maxlength="30"></label>
+            </p>
+            <p>
+                <label>Username (deve contenere almeno 6 caratteri e non pi&ugrave; di 20 ed i caratteri ammissibili sono quelli alfanumerici, il punto, il pi&ugrave; ed il meno):<input type="text" name="username" maxlength="20"></label>
+            </p>
+            <p>
+                <label>Password (deve contenere almeno 8 caratteri e non pi&ugrave; di 16, scelti tra quelli alfanumerici, e deve contenere almeno due cifre, una lettera maiuscola e una minuscola):<input type="password" name="password" maxlength="16"></label>
+            </p>
+            <p>
+                <label>E-mail (deve essere un indirizzo di posta elettronica valido: deve contenere il carattere @, un nome di dominio ed un top-level domain - TLD. Esempi di indirizzi di posta elettronica validi sono: ilmio.nome1@ilmiodominio.it, ilmionome@posta.ilmiodominio.com):<input type="text" name="email" value=""></label>
+            </p>
+            <p>
+                <label><input type="submit" value="Valida"></label>
+                <label><input type="reset" value="Azzera"></label>
+            </p>
+        </form>
+    </body>
+</html>
