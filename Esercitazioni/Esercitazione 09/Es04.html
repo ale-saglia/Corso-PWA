@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <title>Esercizio 9.4</title>
+        <meta name="author" content="Alessandro Saglia">
+
+        <script type="text/javascript">
+            function validaForm(gradi){
+                var regexp=/^(\+|-)[\d]{1,3}\.[\d]$/;
+
+                if(!regexp.test(gradi)){
+                    alert("Formato temperatura errato. Esempio di formato corretto: +3.2 oppure -273.0");
+                    return false;
+                }
+                else
+                    return true;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Esercizio 9.4</h1>
+        <p>Quanti gradi ci sono oggi? (Inserire una temperatura scritta nel seguente formato: il segno &#43; o &#45;, massimo tre cifre per la parte intera, il punto e una sola cifra per la parte frazionaria)</p>
+        <form action="Es04.php" method="GET" onsubmit="return validaForm(gradi.value);">
+            <p>
+                <label>Gradi: <input type="text" name="gradi"></label>
+                <label><input type="submit" value="Invia"></label>
+                <label><input type="reset" name="Cancella"></label>
+            </p>
+        </form>
+    </body>
+</html>
