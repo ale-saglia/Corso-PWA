@@ -19,6 +19,7 @@
                 else{
                     $ris = preg_split("/[\W\s]/", $testo, NULL, PREG_SPLIT_NO_EMPTY);
                     foreach($ris as $value){
+                        $value = strtolower($value);
                         if(!isset($parole[$value]))
                             $parole[$value] = 1;
                         else
