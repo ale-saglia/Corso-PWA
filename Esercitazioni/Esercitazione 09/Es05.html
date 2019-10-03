@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <title>Esercizio 9.5</title>
+        <meta name="author" content="Alessandro Saglia">
+
+        <script type="text/javascript">
+            function validaForm(testo){
+                var regex = /^(?:[\w]+[\.\,\!\?\:\;\s]\s?)+[\w]+[\.\,\!\?\:\;]?$/;
+
+                if(testo == ""){
+                    alert("Attenzione: e' necessario inserire del testo!");
+                    return false;
+                }
+                else if(!regex.test(testo)){
+                    alert("Testo non valido: inserire solo parole separate da caratteri di punteggiatura e spazi");
+                    return false;
+                }
+                else return true;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Esercitazione 9.5</h1>
+        <p>Inserisci testo (solo parole separate da caratteri di punteggiatura e spazi):</p>
+        <form action="Es05.php" method="GET" onsubmit="return validaForm(testo.value);">
+            <p>
+                <label><textarea name="testo" cols="30" rows="10"></textarea></label>
+            </p>
+            <p>
+                <label><input type="submit" value="Invia"></label>
+                <label><input type="reset" value="Cancella"></label>
+            </p>
+        </form>
+    </body>
+</html>
