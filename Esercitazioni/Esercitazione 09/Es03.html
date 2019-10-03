@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <title>Esercizio 9.3</title>
+        <meta name="author" content="Alessandro Saglia">
+    </head>
+
+    <body>
+        <h1>Esercizio 9.3</h1>
+        <p>Inserire due numeri interi composti al massimo da tre cifre (ad esempio 130):</p>
+        <form action="Es03.php" method="GET">
+            <p>
+                <label>Numero 1:<input type="number" size="3" min="0" max="999" name="numero1"></label>
+                <label>Numero 2:<input type="number" size="3" min="0" max="999" name="numero2"></label>
+                Operazione:
+                <input type="radio" name="operazione" value="+" checked>+
+                <input type="radio" name="operazione" value="-">-
+                <input type="radio" name="operazione" value="*">*
+                <input type="radio" name="operazione" value="/">/
+                <label><input type="submit" value="Calcola"></label>
+                <label><input type="reset" value="Cancella"></label>
+            </p>
+        </form>
+    </body>
+</html>
