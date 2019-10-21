@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <title>Esercizio 10.4</title>
+        <meta name="author" content="Alessandro Saglia">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript">
+            function validateForm(nome, cognome){
+                if(nome == "" || cognome == ""){
+                    window.alert("Il nome e/o il cognome non sono impostati.");
+                    return false;
+                }
+                var regexp = /^[A-Z]{1}[a-z]{0,29}$/;
+                if(!regexp.test(nome) || !regexp.test(cognome)){
+                    window.alert("Il nome e/o il cognome contengono caratteri non validi (sono validi solo nomi che contengano solo lettere, la cui prima maiuscola e le altre minuscole, con un massimo di 30 caratteri).");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Esercizio 10.4</h1>
+        <p>Inserire le informazioni richieste:</p>
+        <form action="Es04.php" method="GET" onsubmit="return validateForm(nome.value, cognome.value);">
+            <p>Nome<input type="text" name="nome">
+            Cognome<input type="text" name="cognome">
+            </p>
+            <p><input type="submit" value="Inserisci"><input type="reset" value="Cancella"></p>
+        </form>
+    </body>
+</html>
