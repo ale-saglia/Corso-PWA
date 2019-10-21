@@ -15,7 +15,7 @@
             }
             else{
                 echo"<p class='err'>ERRORE: Cookie \"Country\" assente</p>";
-                echo"<p><a href='lab10_1a.php'>Pagina precedente</a></p>";
+                echo"<p><a href='Es01.php'>Pagina precedente</a></p>";
             }
         ?>
     </body>
