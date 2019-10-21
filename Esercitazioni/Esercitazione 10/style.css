@@ -1,0 +1,18 @@
+h1,h2 {text-align: center; color: blue;}
+table {border: 0.3ex solid red; margin: auto; margin-top: 3%;}
+caption {color: brown; font-size: 1.4em; font-weight: bold;}
+th, td {border: 0.1ex solid black; text-align: center; padding: 1ex;}
+th {font-style: italic;}
+.move {text-align: center;}
+.items {text-align: center; color: blue;}
+.error {text-align: center; font-weight: bold; color: red;}
+.success {text-align: center; font-weight: bold; color: green;}
+.err {color: red;}
+#lang-bar {
+    word-spacing: 2ex;
+    background-color: black;
+    padding-top: 0.5em;
+    padding-bottom: 0.2em;
+    padding-right: 1.3em;
+    text-align: right;
+}
