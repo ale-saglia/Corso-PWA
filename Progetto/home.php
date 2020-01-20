@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <title>Biblioteca - Home</title>
         <meta name="description" content="Homepage del sito della biblioteca Civica di Alba">
-        <link rel="shortcut icon" type="image/png" href="resources/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="resources/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
