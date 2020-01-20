@@ -4,7 +4,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Biblioteca - Home</title>
+        <title>Biblioteca - Libri</title>
         <meta name="description" content="Homepage del sito della biblioteca Civica di Alba">
         <link rel="shortcut icon" type="image/x-icon" href="resources/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,80 +99,12 @@
                         <p style="text-align: center;">Utilizza i menu in alto per accedere o registrarti!</p>';
                 }
                 else{
-                    echo '<p>temp</p>';
+                    include ("ua.php");
                 }
             ?>
         </div>
-
-        <div class="card">
-            <h2>Libri in prestito</h2>
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                <table>
-                    <tr>
-                        <th>Autore</th>
-                        <th>Titolo</th>
-                        <th>Restituisci</th>
-                    </tr>
-                                
-                    <?php
-                        $sql = "SELECT * FROM books";
-                        $resultlibri = mysqli_query($dbr, $sql);
-                        if (mysqli_num_rows($resultlibri) > 0) {
-                            while ($row = mysqli_fetch_assoc($resultlibri)) {
-                                if ($row["prestito"] == $_SESSION["login_user"]) {
-                                    echo "<tr><td>" . $row["autori"] . "</td><td>" . $row["titolo"] . "</td>
-                                        <td class='input'><input type='submit' class='btn' name='" . $row["id"] . "'value='RESTITUISCI'></td>";
-                                }
-                                echo "</tr>";
-                            }
-                        }
-                    ?>
-                </table>
-            </form>
-      </div>
-
-      <div class="card">
-      <div class="tabella">
-        <h2>Elenco libri</h2>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-          <table>
-            <tr>
-              <th>Autore</th>
-              <th>Titolo</th>
-              <th>Prestito</th>
-            </tr>
-            <?php
-            $sql = "SELECT * FROM books";
-            $resultlibri = mysqli_query($dbr, $sql);
-            if (mysqli_num_rows($resultlibri) > 0) {
-              while ($row = mysqli_fetch_assoc($resultlibri)) {
-                echo "<tr><td>" . $row["autori"] . "</td><td>" . $row["titolo"] . "</td>";
-                if ($row["prestito"] == $_SESSION["login_user"]) {
-                  if (time() - strtotime($row["data"]) > $row["giorni"] * 60 * 60 * 24)
-                    echo "<td style='text-align: center'>PRESTITO SCADUTO</td>";
-                  else {
-                    echo "<td style='text-align: center'>IN PRESTITO</td>";
-                  }
-                } else if (!empty($row["prestito"])) {
-                  echo "<td style='text-align: center'>NON DISPONIBILE</td>";
-                } else {
-                  echo "<td style='text-align: center'><input type='checkbox' name='checkbox[]' value='" . $row["id"] . "'></input></td>";
-                }
-                echo "</tr>";
-              }
-            } ?>
-          </table>
-          <div class="notif peek"><?php echo $error; ?></div>
-
-          <div style="float:right;">
-            <input class="textinput" type="text" name="numgiorni" placeholder="Inserisci per quanti giorni">
-            <input class="btn" type="submit" value="PRESTITO">
-        </div>
-        </form>
-      </div>
-    </div>
-    </div>
-        </div>
+        
+        <div class="notif peek"><?php echo $error; ?></div>
 
         <footer>
             <span>

@@ -4,7 +4,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Biblioteca - Login</title>
+        <title>Biblioteca - Registrati</title>
         <meta name="description" content="Homepage del sito della biblioteca Civica di Alba">
         <link rel="shortcut icon" type="image/x-icon" href="resources/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +19,7 @@
         $nameerr = $passworderr = "";
         $utentecreato = false;
 
-        // VARIE REGEX
-        // USERNAME: solo LETTERE/NUMERI o %, deve iniziare con 
-        // % o LETTERA, lungo minimo 6 caratteri con almeno un numero ed una non lettera
         $username_regex = "/(?=.*[a-zA-Z])(?=.*[0-9%])^[a-zA-Z%]{1}[a-zA-Z0-9%]{2,5}$/";
-        // PASSWORD: solo caratteri ALFABETICI tra 4 ed 8 caratteri con almeno una MAIUSCOLA ed una MINUSCOLA
         $password_regex = "/^(?=.*[a-z])(?=.*[A-Z]).{4,8}/";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
