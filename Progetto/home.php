@@ -41,6 +41,20 @@
 
             </div>
         </div>
+
+        <div class="statusBar">
+            <?php
+                if (!empty($_SESSION["login_user"]))
+                    echo '<div class="usermenu">Benvenuto ' . $_SESSION["login_user"] . '. Hai ' . $numlibri . ' libri in prestito.</div>';
+                else
+                    echo '<div class="usermenu">Benvenuto ANONIMO. Hai 0 libri in prestito.</div>'
+            ?>
+        </div>
+
+        <div class="card">
+            <h1>Benvenuto!</h1>
+            Il sito della biblioteca civica di Alba &egrave; lieto di accoglierti!
+        </div>
     </body>
 </html>
 
