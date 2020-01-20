@@ -95,8 +95,17 @@
         <div class="card">
             <?php
                 if (empty($_SESSION["login_user"])){
+                    $totlibri=mysqli_num_rows(mysqli_query($dbr, "SELECT * FROM books"));
+                    $libridisponibili=mysqli_num_rows(mysqli_query($dbr, "SELECT * FROM books WHERE prestito IS NULL OR prestito=''"));
+
+
+
                     echo '<h2 style="text-align: center;">Attenzione! Per accedere a questa sezione è necessario essere autenticati.</h2>
-                        <p style="text-align: center;">Utilizza i menu in alto per accedere o registrarti!</p>';
+                        <p>Accedendo alla nostra biblioteca potrai avere accesso al nostro catalogo di '.$totlibri.' libri dei quali '.$libridisponibili.' sono disponibili!</p>
+                        <br>
+                        <p style="text-align: center;">Utilizza i menu in alto per accedere o registrarti!</p>
+                        ';
+                         
                 }
                 else{
                     include ("ua.php");
