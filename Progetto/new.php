@@ -23,33 +23,35 @@
         $password_regex = "/^(?=.*[a-z])(?=.*[A-Z]).{4,8}/";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (empty($_POST["name"])) {
+            if (empty($_POST["name"]))
                 $err = "Devi inserire uno username!";
-            } else {
-                if (preg_match($username_regex, $_POST["name"])) {
+            else {
+                if (preg_match($username_regex, $_POST["name"]))
                     $name = true;
-                } else {
+                else
                     $err = "Lo username non rispetta i parametri.";
-                }
             }
-            if (empty($_POST["password"])) {
+            if (empty($_POST["password"]))
                 $passerr = "Devi inserire una password!";
-            } else {
-                if (empty($_POST["password2"])) {
+            else {
+                if (empty($_POST["password2"]))
                     $passerr = "Devi ripetere la password!";
-                } else {
-                    if ($_POST["password"] === $_POST["password2"] && preg_match($password_regex, $_POST["password"])) {
+                else {
+                    if ($_POST["password"] === $_POST["password2"] && preg_match($password_regex, $_POST["password"]))
                         $password = true;
-                    } else {
+                    else
                         $passerr = "Le due password non coincidono o la password non rispetta i parametri.";
-                    }
                 }
             }
 
-            if(isset($err))
+            if(isset($err)){
+                if(isset($passerr))
+                    $err=$err."<br>".$passerr;
+            }
+            else if(isset($err))
                 $err=$passerr;
             else
-                $err=$err."<br>".$passerr;
+                $err="";
                 
                 
 
@@ -119,17 +121,14 @@
                     </div>
                     <br>
                     <?php if ($utentecreato === true) {
-                        echo "Uetnte " . $name . " creato con successo.";
+                        echo '<div class="notif peek">Utente ' . $name . ' creato con successo.</div>';
                     }
                     $utentecreato = false;
                     ?>
                 </form>
         </div>
         
-        <div class="notif peek"><?php
-                if(isset($err))
-                    echo $err;
-            ?></div>   
+        <div class="notif peek"><?php echo $err;?></div>   
 
         <footer>
             <span>
