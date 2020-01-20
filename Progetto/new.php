@@ -128,7 +128,7 @@
                 </form>
         </div>
         
-        <div class="notif peek"><?php echo $err;?></div>   
+        <div class="notif peek"><?php if(isset($err)) echo $err; ?></div>   
 
         <footer>
             <span>
