@@ -34,7 +34,25 @@
         else {
             $error = "Massimo 3 libri in prestito alla volta.";
         }
+
+        
     }
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $sql = "SELECT * FROM books";
+            $resultlibri = mysqli_query($dbr, $sql);
+            if (mysqli_num_rows($resultlibri) > 0) {
+                while ($row = mysqli_fetch_assoc($resultlibri)) {
+                    if (!empty($_POST["" . $row["id"]])) {
+                        $durataprestito = round((time() - strtotime($row["data"])) / 60 / 60 / 24);
+                        $sql = "UPDATE books
+                        SET prestito = '', DATA = 0, giorni=0
+                        WHERE id=" . $row['id'] . ";";
+                        mysqli_query($dbw, $sql);
+                    }
+                }
+            }
+        }
     ?>
     
     <body>
@@ -88,7 +106,7 @@
 
         <div class="card">
             <h2>Libri in prestito</h2>
-            <form method="post" action="<?php echo htmlspecialchars("restituisci.php    "); ?>">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <table>
                     <tr>
                         <th>Autore</th>
@@ -103,7 +121,7 @@
                             while ($row = mysqli_fetch_assoc($resultlibri)) {
                                 if ($row["prestito"] == $_SESSION["login_user"]) {
                                     echo "<tr><td>" . $row["autori"] . "</td><td>" . $row["titolo"] . "</td>
-                                        <td class='input'><input type='submit' class='btn' name='" . $row["id"] . "'value='RESTITUISCI' formaction='restituisci.php'></td>";
+                                        <td class='input'><input type='submit' class='btn' name='" . $row["id"] . "'value='RESTITUISCI'></td>";
                                 }
                                 echo "</tr>";
                             }
